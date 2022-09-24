@@ -14,6 +14,9 @@ int main()
     //creating a render window
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
 
+    sf::Texture texture;
+    texture.create(window.getSize().x, window.getSize().y);
+
     //create and fill circle
     sf::CircleShape shape;
     shape.setRadius(50.0f);
@@ -58,6 +61,9 @@ int main()
             if (event.key.code == sf::Keyboard::W) {
                 whatShape = 1;
             }
+            if (event.key.code == sf::Keyboard::P) {
+                texture.copyToImage().saveToFile("screenshot.jpg");
+            }
             //For whatever reason, it always increases its size and I can't figure out why
             /*
             if (event.key.code == sf::Keyboard::Up) {
@@ -81,10 +87,11 @@ int main()
                 rect.setPosition(sf::Mouse::getPosition(window).x - rect.getSize().x, sf::Mouse::getPosition(window).y - rect.getSize().y);
                 window.draw(rect);
             }
-            
+
         }
-        
+
         window.display();
+        texture.update(window);
     }
     
 
