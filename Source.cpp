@@ -62,7 +62,7 @@ int main()
                 whatShape = 1;
             }
             if (event.key.code == sf::Keyboard::P) {
-                texture.copyToImage().saveToFile("screenshot.jpg");
+                texture.copyToImage().saveToFile("screenshot.png");
             }
             //For whatever reason, it always increases its size and I can't figure out why
             /*
