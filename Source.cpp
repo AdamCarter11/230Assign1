@@ -64,17 +64,16 @@ int main()
             if (event.key.code == sf::Keyboard::P) {
                 texture.copyToImage().saveToFile("screenshot.png");
             }
-            //For whatever reason, it always increases its size and I can't figure out why
-            /*
+            //For whatever reason, it always increases its size when I use variables (instead of 2 constants) and I can't figure out why
             if (event.key.code == sf::Keyboard::Up) {
-                size = size + 10;
+                size = 50 + 50;
                 rect.setSize(sf::Vector2f(size, size));
             }
             if (event.key.code == sf::Keyboard::Down) {
-                size = size - 10;
+                size = 50 - 25;
                 rect.setSize(sf::Vector2f(size, size));
             }
-            */
+            
         }
         //used for updating the window
         //window.clear();
